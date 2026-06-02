@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Matching Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="startScreen" class="start-screen">
+            <div class="logo-box">
+                <img src="images/logo.png" alt="Your logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="logo-fallback">LOGO</div>
+            </div>
+            <h2>How to Play</h2>
+            <p>Look at the image at the top, then choose the matching image from the two options below.</p>
+            <p>You will play 10 rounds. Try to get the highest score possible.</p>
+            <button id="startBtn" class="reset-btn start-btn">Start Game</button>
+        </div>
+
+        <div id="gameWrapper" class="game-wrapper hidden">
+            <header>
+            <h1>Image Match Challenge</h1>
+            <p class="subtitle">Find the image that matches the target in each round. Ten rounds total.</p>
+            <br>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Round</span>
+                    <span class="value" id="round">1/10</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Score</span>
+                    <span class="value" id="score">0</span>
+                </div>
+            </div>
+        </header>
+
+            <div class="button-row">
+                <button id="resetBtn" class="reset-btn">New Game</button>
+                <button id="musicBtn" class="reset-btn music-btn">Music: On</button>
+            </div>
+
+            <section class="play-area">
+            <div class="target-panel">
+                <p class="prompt">Which image matches this one?</p>
+                <div id="targetImage" class="target-card"></div>
+                <p id="feedback" class="feedback">Choose the matching image.</p>
+            </div>
+
+                <div class="choice-grid" id="gameBoard"></div>
+            </section>
+        </div>
+
+        <div id="winMessage" class="win-message hidden">
+            <h2>🎉 You Won!</h2>
+            <p id="finalStats"></p>
+            <button onclick="location.reload()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
